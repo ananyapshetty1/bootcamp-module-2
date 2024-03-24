@@ -137,11 +137,11 @@ var numArr: [Int] = Array(repeating: 0, count: 5)
 
 // [1] Rewrite this code to use a loop
 /* BEGIN CODE */
-numArr[0] = 10
-numArr[1] = 20
-numArr[2] = 30
-numArr[3] = 40
-numArr[4] = 50
+var i: Int = 0
+while i<5 {
+    numArr[i] = (i+1)*10
+    i+=1
+}
 /* END CODE */
 print("numArr: \(numArr)")
 // <-- [RUN HERE] The output should be unchanged
@@ -160,9 +160,9 @@ var messages: [String: String] = [
 // [2] Print out each message ID and their contents.
 //     Reference the docs for the desired output format.
 print("\nMessage Data:")
-/* BEGIN CODE */
-
-/* END CODE */
+for (aKey, aVal) in messages {
+    print("\(aKey): \(aVal)")
+}
 // <-- [RUN HERE] Does this seem like the order of a normal conversation?
 //                Perhaps we're missing some data about which messages
 //                come before the other.
@@ -183,28 +183,35 @@ print("Goodbye!")
 // [3] Write a while loop which prints out the messages in order.
 //     Refer to the docs for tips & tricks.
 print("\n(WHILE) MESSAGES: ")
-/* BEGIN CODE */
-
-/* END CODE */
-// <-- [RUN HERE] Check if your output matches the example.
+var num:Int = 0
+var message: String
+while num<6 {
+    message = messageOrder[num]
+    print("\(message): \(messages[message]!)")
+    num+=1
+}
 
 // [4] Do the same thing, but with a repeat-while loop
 print("\n(REPEAT-WHILE) MESSAGES: ")
-/* BEGIN CODE */
-
-/* END CODE */
+num = 0
+repeat {
+    message = messageOrder[num]
+    print("\(message): \(messages[message]!)")
+    num+=1
+} while (num<6)
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [5] Do the same thing, but with a for loop using default iterator
 print("\n(FOR ITERATOR) MESSAGES: ")
-/* BEGIN CODE */
-
-/* END CODE */
+for aMessage in messageOrder {
+    print("\(aMessage): \(messages[aMessage]!)")
+}
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [6] Do the same thing, but with a for loop using a range
 print("\n(FOR RANGE) MESSAGES: ")
-/* BEGIN CODE */
-
-/* END CODE */
+for aNum in 0..<6 {
+    message = messageOrder[aNum]
+    print("\(message): \(messages[message]!)")
+}
 // <-- [RUN HERE] Check if your output matches the example.

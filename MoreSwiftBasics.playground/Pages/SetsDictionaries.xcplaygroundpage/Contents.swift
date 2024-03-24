@@ -128,9 +128,7 @@ print("*** SET & DICTIONARY PRACTICE ***")
 let animalSet: Set<String> = ["Giraffe", "Zebra", "Elephant", "Panda", "Lion"]
 
 // [1] Declare a String-Set with Zebra (can be done in one line)
-/* BEGIN CODE */
-
-/* END CODE */
+var mySet:Set<String> = ["Zebra"]
 
 // Validate your `mySet` declaration. Also note two useful functions of Set
 if !mySet.contains("Zebra") {
@@ -143,44 +141,38 @@ if !mySet.contains("Zebra") {
 // <-- [RUN HERE] If you created this set properly, this should output "SUCCESS..."
 
 // [2] Declare an optional String-Set, but don't initialize it
-/* BEGIN CODE */
-
-/* END CODE */
+var optionalSet: Set<String>?
 
 // [3] Insert "Giraffe" into optionalSet.
-/* BEGIN CODE */
-
-/* END CODE */
+optionalSet?.insert("Giraffe")
 
 // [4] Check if optionalSet contains "Giraffe"
-/* BEGIN CODE */
-
-/* END CODE */
+if let aSet = optionalSet {
+    print(aSet.contains("Giraffe"))
+} else {
+    print("This set has no elements!")
+}
 // <-- [RUN HERE] optionalSet should NOT contain Giraffe at this point
 
 // [5] Initialize optionalSet with "Cow", "Elephant"
 // (can be done in one line)
-/* BEGIN CODE */
-
-/* END CODE */
+optionalSet = ["Cow", "Elephant"]
 
 // [6] Insert "Giraffe" into optionalSet again
-/* BEGIN CODE */
-
-/* END CODE */
+optionalSet?.insert("Giraffe")
 
 // [7] Check if optionalSet contains "Giraffe"
-/* BEGIN CODE */
-
-/* END CODE */
+if let aSet = optionalSet {
+    print(aSet.contains("Giraffe"))
+} else {
+    print("This set has no elements!")
+}
 // <-- [RUN HERE] optionalSet SHOULD contain Giraffe at this point
 
 print("optionalSet size: \(optionalSet?.count)")
 
 // [8] Insert "Giraffe" into optionalSet again
-/* BEGIN CODE */
-
-/* END CODE */
+optionalSet?.insert("Giraffe")
 
 print("optionalSet size: \(optionalSet?.count)")
 // <-- [RUN HERE] The set should remain unchanged.
